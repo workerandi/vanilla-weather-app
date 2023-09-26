@@ -33,6 +33,7 @@ a {
 .container {
   font-family: monospace;
   max-width: fit-content;
+  margin-top: 50px;
 }
 .aesthetics {
   color: #6a0000;
