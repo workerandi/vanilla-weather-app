@@ -1,10 +1,9 @@
 h1 {
-  font-size: 85px;
+  font-size: 150px;
   margin-bottom: 40px;
 }
 p {
   font-size: 24px;
-  text-align: left;
 }
 button {
   padding: auto;
@@ -30,12 +29,11 @@ a {
   text-decoration: none;
   font-family: monospace;
 }
+
 .container {
   font-family: monospace;
   max-width: fit-content;
   margin-top: 50px;
-}
-.aesthetics {
   color: #6a0000;
   border-color: #c4f0c5;
   border-style: ridge;
@@ -43,13 +41,34 @@ a {
   background-color: #f1fff1;
   padding: 30px;
 }
+.otherCurrentInfo {
+  text-align: left;
+  margin-left: 30px;
+}
+
+.units {
+  font-size: 30px;
+  margin: 40px auto;
+  cursor: default;
+}
+.forecast {
+  margin-top: 20px;
+  text-align: center;
+  border-color: #c4f0c5;
+  border-style: ridge;
+  border-width: 1px;
+  padding: 12px;
+}
+.forecastIcons {
+  background-color: #f1fff1;
+  width: 30px;
+  margin: 20px auto;
+  text-align: center;
+}
+
 #icon {
   background-color: #f1fff1;
   width: 60px;
   margin: 40px auto;
   text-align: center;
-}
-#unitButton {
-  margin-top: 95px;
-  margin-left: 100px;
 }

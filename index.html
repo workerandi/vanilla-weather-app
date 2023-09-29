@@ -16,25 +16,70 @@
   </head>
   <body>
     <div class="container">
-      <section class="aesthetics">
-        <div class="row">
+      <div class="row">
+        <div class="col">
+          <h2 id="cityDisplayed">Lenexa, KS</h2>
+          <h2 id="currentTime"></h2>
+          <p id="description">Clear Sky</p>
+          <br />
+          <img id="icon" src="src/sun-regular.svg" />
+          <form id="inputForm">
+            <input type="text" placeholder="Change City:" id="searchBar" />
+            <button type="submit" id="searchButton">Search</button>
+          </form>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col-6">
+              <h1 id="temperature">24</h1>
+            </div>
+            <div class="col-6">
+              <div class="row">
+                <div class="col-2">
+                  <h1 class="units" id="cButton">°C</h1>
+                </div>
+                <div class="col-8">
+                  <h1 class="units" id="fButton">|°F</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <p class="otherCurrentInfo">29° / 16°</p>
+          <p class="otherCurrentInfo" id="windSpeed">8km/h</p>
+        </div>
+      </div>
+      <section>
+        <div class="row forecast">
           <div class="col">
-            <h2 id="cityDisplayed">Lenexa, KS</h2>
-            <h2 id="currentTime"></h2>
-            <p id="description">Clear Sky</p>
-            <br />
-            <img id="icon" src="src/sun-regular.svg" />
-            <form id="inputForm">
-              <input type="text" placeholder="Change City:" id="searchBar" />
-              <button type="submit" id="searchButton">Search</button>
-            </form>
+            <p>Day</p>
+            <img class="forecastIcons" src="src/sun-regular.svg" />
+            <p class="predictedTemp">11° | 33°</p>
           </div>
           <div class="col">
-            <h1 id="temperature">24 °C</h1>
-            <br />
-            <p>29° / 16°</p>
-            <p id="windSpeed">8km/h</p>
-            <button id="unitButton">Convert Unit</button>
+            <p>Day</p>
+            <img class="forecastIcons" src="src/sun-regular.svg" />
+            <p class="predictedTemp">22° | 55°</p>
+          </div>
+          <div class="col">
+            <p>Day</p>
+            <img class="forecastIcons" src="src/sun-regular.svg" />
+            <p class="predictedTemp">22° | 55°</p>
+          </div>
+          <div class="col">
+            <p>Day</p>
+            <img class="forecastIcons" src="src/sun-regular.svg" />
+            <p class="predictedTemp">22° | 55°</p>
+          </div>
+          <div class="col">
+            <p>Day</p>
+            <img class="forecastIcons" src="src/sun-regular.svg" />
+            <p class="predictedTemp">22° | 55°</p>
+          </div>
+          <div class="col">
+            <p>Day</p>
+            <img class="forecastIcons" src="src/sun-regular.svg" />
+            <p class="predictedTemp">33° | 55°</p>
           </div>
         </div>
       </section>
