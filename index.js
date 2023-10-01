@@ -28,14 +28,11 @@ function displayTemperature(response) {
 
   celsiusTemp = response.data.temperature.current;
 
-  temperatureElement.innerHTML = Math.round(`${celsiusTemp} °C`);
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
   windSpeed.innerHTML = Math.round(response.data.wind.speed) + "km/h";
   description.innerHTML = response.data.condition.description;
   cityDisplayed.innerHTML = response.data.city;
-  icon.setAttribute(
-    "src",
-    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.icon}.png`
-  );
+  icon.setAttribute("src", response.data.condition.icon_url);
 }
 
 function convertFTemperature(event) {
@@ -73,6 +70,7 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
 displayForecast();
 
 let celsiusTemp = null;
