@@ -44,12 +44,21 @@ a {
 .otherCurrentInfo {
   text-align: left;
   margin-left: 30px;
+  border-color: #c4f0c5;
+  border-style: ridge;
+  border-width: 1px;
 }
 
 .units {
   font-size: 30px;
   margin: 40px auto;
   cursor: default;
+}
+.mainTemp {
+  border-color: #c4f0c5;
+  border-style: ridge;
+  border-width: 1px;
+  padding: auto;
 }
 .forecast {
   margin-top: 20px;
@@ -71,4 +80,7 @@ a {
   width: 60px;
   margin: 40px auto;
   text-align: center;
+  border-color: #c4f0c5;
+  border-style: ridge;
+  border-width: 1px;
 }
