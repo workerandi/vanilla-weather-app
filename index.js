@@ -19,6 +19,13 @@ function updateTime() {
 updateTime();
 setInterval(updateTime, 60000);
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
 function search(event) {
   event.preventDefault();
   let apiKey = "of4be206ff10d3a71a40t7bf74fdc933";
@@ -31,8 +38,6 @@ function convertFTemperature(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
   let farenheitTemp = Math.round((celsiusTemp * 9) / 5 + 32);
-  //let highLow = document.querySelector("#highLow");
-  //highLow.innerHTML = "working";
   temperature.innerHTML = farenheitTemp;
 }
 function convertCTemperature(event) {
@@ -42,21 +47,26 @@ function convertCTemperature(event) {
 }
 
 function displayForecast(response) {
-  console.log(response);
-  let forecastTemp = document.querySelector("#forecastTemp");
+  console.log(response.data.daily);
+
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
+
   let forecastHTML = `<div class="row">`;
-  let days = ["Sat", "Sun", "Mon", "Tues", "Wed", "Thurs"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col forecast ">
-            <p>${day}</p>
-            <img class="forecastIcons" src="src/sun-regular.svg" />
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 7) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col forecast ">
+            <p>${formatDay(forecastDay.time)}</p>
+            <img class="forecastIcons" src="${
+              forecastDay.condition.icon_url
+            }" />
         <div class="row">
-          <p class="forcastTemp">${forecastTemp} </P>
+          <p>${Math.round(forecastDay.temperature.day)} °C </P>
         </div>
           </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -65,7 +75,8 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "of4be206ff10d3a71a40t7bf74fdc933";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&units=metric`;
+  let city = document.querySelector("#searchBar").value;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 function displayTemperature(response) {

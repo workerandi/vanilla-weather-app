@@ -28,11 +28,12 @@ a {
   color: #6a0000;
   text-decoration: none;
   font-family: monospace;
+  margin-left: 430px;
 }
 
 .container {
   font-family: monospace;
-  max-width: fit-content;
+  max-width: 750px;
   margin-top: 50px;
   color: #6a0000;
   border-color: #c4f0c5;
@@ -42,7 +43,7 @@ a {
   padding: 30px;
 }
 .otherCurrentInfo {
-  text-align: left;
+  text-align: center;
   margin-left: 30px;
   border-color: #c4f0c5;
   border-style: ridge;
